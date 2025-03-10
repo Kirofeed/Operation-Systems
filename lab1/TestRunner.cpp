@@ -5,15 +5,7 @@
 #include <fstream>
 #include "Employee.h"
 
-/*
- * Этот файл содержит простейшие юнит-тесты для проверки функций записи/чтения и сортировки.
- * Если вы совсем не знакомы с юнит-тестированием – не пугайтесь:
- * здесь показано, как можно организовать тесты с минимальными усилиями.
- */
-
-// Тест записи и чтения сотрудников в/из бинарного файла
 bool testWriteReadEmployees() {
-    // Создаем тестовый вектор сотрудников
     std::vector<Employee> employees;
     Employee e1;
     e1.num = 2;
@@ -32,7 +24,6 @@ bool testWriteReadEmployees() {
         return false;
     }
 
-    // Читаем данные обратно
     std::vector<Employee> readEmployees;
     if (!readEmployeeRecords(testFilename, readEmployees)) {
         std::cerr << "Не удалось прочитать сотрудников." << std::endl;
@@ -52,12 +43,10 @@ bool testWriteReadEmployees() {
             return false;
         }
     }
-    // Удаляем тестовый файл
     std::remove(testFilename);
     return true;
 }
 
-// Тест сортировки сотрудников по идентификационному номеру
 bool testSortEmployees() {
     std::vector<Employee> employees;
     Employee e1, e2, e3;
@@ -68,7 +57,6 @@ bool testSortEmployees() {
     employees.push_back(e2);
     employees.push_back(e3);
     
-    // Выполняем сортировку
     sortEmployees(employees);
     
     if (employees[0].num != 1 || employees[1].num != 2 || employees[2].num != 3) {

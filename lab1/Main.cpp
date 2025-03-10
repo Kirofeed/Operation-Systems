@@ -81,7 +81,6 @@ int main() {
     creatorCmd << "./Creator " << binFilename << " " << numRecords;
 #endif
 
-    // Запускаем процесс Creator
     if (runProcess(creatorCmd.str()) != 0) {
         std::cerr << "Процесс Creator завершился с ошибкой." << std::endl;
         return 1;
