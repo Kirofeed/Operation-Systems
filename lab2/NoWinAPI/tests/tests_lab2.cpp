@@ -23,7 +23,7 @@ void testAverage()
 
 void testIntegration()
 {
-    g_array = {1, 3, 5, 7, 9}; // min = 1, max = 9, avg = 5.0
+    g_array = {1, 3, 5, 7, 9};
 
     std::thread t1(MinMaxThread);
     std::thread t2(AverageThread);
@@ -40,7 +40,6 @@ void testIntegration()
     assert(g_max == 9);
     assert(g_avg == 5.0);
 
-    // Now array should be: 5, 3, 5, 7, 5
     std::vector<int> expected = {5, 3, 5, 7, 5};
     assert(g_array == expected);
 }

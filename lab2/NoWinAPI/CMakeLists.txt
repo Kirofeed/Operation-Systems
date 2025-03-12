@@ -10,7 +10,6 @@ add_executable(lab2
     globals.cpp
 )
 
-# Добавь тесты, если используешь их
 add_executable(lab2_tests
     tests/tests_lab2.cpp
     lab_functions.cpp

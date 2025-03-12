@@ -26,15 +26,12 @@ int main()
         cin >> g_array[i];
     }
 
-    // Create and run threads
     thread t1(MinMaxThread);
     thread t2(AverageThread);
 
-    // Wait for threads to complete
     t1.join();
     t2.join();
 
-    // Replace the minimum and maximum elements with the average value
     for (int& val : g_array)
     {
         if (val == g_min || val == g_max)
@@ -43,7 +40,6 @@ int main()
         }
     }
 
-    // Output the modified array
     cout << "Modified array: ";
     for (int val : g_array)
     {
