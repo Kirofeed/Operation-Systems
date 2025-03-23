@@ -7,7 +7,7 @@
 
 // Утилита Creator получает через командную строку:
 // argv[1] – имя бинарного файла для записи,
-// argv[2] – количество записей для ввода.
+// argv[2] – количество записей для вводаq.
 int main(int argc, char* argv[]) {
     if (argc != 3) {
         std::cerr << "Usage: Creator <binary_file_name> <number_of_records>" << std::endl;
